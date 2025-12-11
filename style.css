@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+}
+.content {
+    width: 350px;
+    max-height: 500px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px 0px #0000000d;
+    overflow-y: auto;
+}
+.content header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+header h3 {
+    color: #333;
+}
+header p {
+    color: #777;
+    font-size: 14px;
+}
+.inputs {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+.inputs input {
+    height: 36px;
+    width: calc(100% - 40px);
+    padding: 5px 10px;
+    border-radius: 999999px;
+    border: 1px solid #eee;
+    outline: none;
+}
+.inputs button {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-size: 18px;
+    color: #0075ff;
+    background-color: #0077ff27;
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+    margin-top: 15px;
+}
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+li:not(:last-child) {
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+li > div {
+    display: flex;
+    align-items: center;
+}
+li button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-size: 16px;
+    color: #777;
+    cursor: pointer;
+    transition: all 300ms;
+}
+li button#check {
+    background-color: #4cae4f4d;
+    color: #4CAF50;
+    margin-right: 10px;
+}
+li button#delete {
+    background-color: #ff24244d;
+    color: #ff2525;
+    margin-right: 10px;
+}
+li button#edit {
+    background-color: #ffec3d4d;
+    color: #FF9800;
+}
+li.check p {
+    color: #777;
+    text-decoration: line-through;
+}
