@@ -1,6 +1,8 @@
 const text = document.getElementById("text"),
     addBtn = document.getElementById("add"),
-    resultSpace = document.querySelector("ul");
+    resultSpace = document.querySelector("ul"),
+    progresText = document.querySelector(".progres .text"),
+    progressWidth = document.querySelector(".line span");
 
 let arr = [];
 
@@ -21,6 +23,8 @@ function addToArr(item) {
 
 function addInPage() {
     resultSpace.innerHTML = "";
+    progresText.innerHTML = "";
+    progressWidth.style.width = "0%";
     arr.forEach((e, index) => {
         let li = document.createElement("li");
         let pragraph = document.createElement("p");
@@ -53,6 +57,15 @@ function addInPage() {
         li.appendChild(div);
         resultSpace.appendChild(li);
     });
+
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].check == true) {
+            count = 1 + count;
+        }
+    }
+    progresText.innerHTML = `${count} / ${arr.length}`;
+    progressWidth.style.width = `${(count / arr.length) * 100}%`;
 }
 
 function saveInLocalStorage() {
@@ -62,6 +75,7 @@ function saveInLocalStorage() {
 function showInPage() {
     let newArr = window.localStorage.getItem("tasks");
     arr = JSON.parse(newArr);
+
     addInPage();
 }
 
