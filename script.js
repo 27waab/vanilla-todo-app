@@ -74,7 +74,7 @@ function saveInLocalStorage() {
 
 function showInPage() {
     let newArr = window.localStorage.getItem("tasks");
-    arr = JSON.parse(newArr);
+    arr = JSON.parse(newArr) || [];
 
     addInPage();
 }
@@ -104,3 +104,4 @@ resultSpace.addEventListener("click", (event) => {
 });
 
 showInPage();
+
